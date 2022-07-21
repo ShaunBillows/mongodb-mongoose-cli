@@ -1,0 +1,26 @@
+{
+  "name": "mongodb-mongoose-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShaunBillows/mongodb-mongoose-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShaunBillows/mongodb-mongoose-cli/issues"
+  },
+  "homepage": "https://github.com/ShaunBillows/mongodb-mongoose-cli#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "mongodb": "^4.8.0",
+    "mongoose": "^6.4.6",
+    "yargs": "^17.5.1"
+  }
+}

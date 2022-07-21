@@ -1,0 +1,70 @@
+note : { $set: updateObj } The $set operator replaces the value of a field with the specified value.
+
+mongodb is like a maccies burger, mongoose is five guys 
+
+ODM - object document mapping software (eg mongoose)
+take an object, make it into a document, pass it to a database
+
+it allows us to enfore structure in our database
+
+mongoose make it easier to interact with mongodb
+
+like a handheld whisk vs an electric whisk
+
+npm init --y
+
+npm i yargs mongoose dotenv
+
+collection name goes in env uri 
+eg mongodb.net/m39Movies?retryWrites
+
+? in connection string actually means options (so cannot put ? in password)
+
+connection.js here is shorted - but look smore complicated
+
+const mongoose = require("mongoose")
+-mongooes hadles a lot for us behind the scenes
+
+no longer need to pass collection around -  using model instead 
+
+can run try catch in app, but if you use functions instead you isolate the error exactly 
+
+structure for db file goes in model (schema)
+rather than key:value, key:(type of value)
+
+convention: what you store followed by 
+
+const movieSchema =  new mongoose.Schema({
+    title: {
+        type: String,
+        unique: true,
+        required: true,
+    }
+    actor: {
+        type: String,
+        default: "Not Specified",
+
+    }
+})
+
+note: now Movie model replaces collection (now we can have different models - create a new folder)
+const Movie = mongoose.model("Movie", movieSchema)
+
+Note: exports.createMovie = () => this is shorthand for create a function and import it
+Note: dont use it on a class it make it behave wierd 
+Note: need obj deconst. on import 
+
+ coonnection.js must run first
+=> line 1 app => require('/db/connection')
+
+if you want to create a crub funciton it lives in app.js
+
+keycode 11000 is duplicate error
+
+Note: if you have two js scripts in an html file they run (psudo) asyncronusly 
+
+note: mongo can atuo pluralise works 
+
+note: mongo connection string creates collections in cluster automatically if they don't exist   
+
+note: two db in one app is difficult because you have have to choose which .env var you use - not advisable 
