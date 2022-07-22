@@ -17,4 +17,4 @@ const movieSchema = new mongoose.Schema({
   module.exports = Movie
 
 // A model is a class with which we construct documents.
-// In this case, each document will be a movie and behaviors as declared in our schema.
+// In this case, each document will be a movie and behaves as declared in our schema.

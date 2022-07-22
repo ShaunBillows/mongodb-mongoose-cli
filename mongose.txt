@@ -57,6 +57,8 @@ Note: need obj deconst. on import
  coonnection.js must run first
 => line 1 app => require('/db/connection')
 
+note: some functions may require this to finish before they start which can cause issues
+
 if you want to create a crub funciton it lives in app.js
 
 keycode 11000 is duplicate error
@@ -68,3 +70,5 @@ note: mongo can atuo pluralise works
 note: mongo connection string creates collections in cluster automatically if they don't exist   
 
 note: two db in one app is difficult because you have have to choose which .env var you use - not advisable 
+
+[] ==> JS injection
