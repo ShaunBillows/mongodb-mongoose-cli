@@ -48,11 +48,29 @@ exports.deleteAllMovies = async () => {
 
 exports.filteredSearch = async (key, keyword) => {
     try {
+        if (key === 'title') {
+            const result = await Movie.find({[key]: new RegExp(keyword)})
 
-        const result = await Movie.find({[key]: new RegExp(keyword)})
+        } else if (key === 'actor') [
+            result = await Movie.find({[key]: new RegExp(keyword)})
+        ]
+
         console.log(result);
      }
     catch (error) {
         console.log(error);
     }
 }
+
+// An example of how to leave yourself open to JS injection 
+
+// exports.filteredSearch = async (key, keyword) => {
+//     try {
+
+//         const result = await Movie.find({[key]: new RegExp(keyword)})
+//         console.log(result);
+//      }
+//     catch (error) {
+//         console.log(error);
+//     }
+// }

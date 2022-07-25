@@ -1,1 +1,0 @@
-# mongodb-mongoose-cli
