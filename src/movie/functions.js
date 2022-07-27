@@ -48,17 +48,17 @@ exports.deleteAllMovies = async () => {
 
 exports.filteredSearch = async (key, keyword) => {
     try {
+        let result
         if (key === 'title') {
-            const result = await Movie.find({[key]: new RegExp(keyword)})
-
-        } else if (key === 'actor') [
-            result = await Movie.find({[key]: new RegExp(keyword)})
-        ]
-
-        console.log(result);
+            result = await Movie.find({title: new RegExp(keyword)})
+            console.log(result)
+        } else if (key === 'actor') {
+            result = await Movie.find({actor: new RegExp(keyword)})
+            console.log(result)
+        }
      }
     catch (error) {
-        console.log(error);
+        console.log(error)
     }
 }
 

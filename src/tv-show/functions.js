@@ -49,11 +49,29 @@ exports.deleteAllTvShows = async () => {
 
 exports.filteredSearch = async (key, keyword) => {
     try {
-
-        const result = await TvShow.find({[key]: new RegExp(keyword)})
-        console.log(result);
+        let result
+        if (key === "title") {
+            result = await TvShow.find({title: new RegExp(keyword)})
+            console.log(result);
+        } else if (key === "actor") {
+            result = await TvShow.find({actor: new RegExp(keyword)})
+            console.log(result);
+        }
      }
     catch (error) {
         console.log(error);
     }
 }
+
+// An example of how to leave youself open to a JS injection attack
+
+// exports.filteredSearch = async (key, keyword) => {
+//     try {
+
+//         const result = await TvShow.find({[key]: new RegExp(keyword)})
+//         console.log(result);
+//      }
+//     catch (error) {
+//         console.log(error);
+//     }
+// }
