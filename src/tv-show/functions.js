@@ -13,6 +13,9 @@ exports.createTvShow = async (tvShowObj) => {
 exports.readTvShows = async () => {
     try {
         const results = await TvShow.find()
+        if (!results) {
+            throw new Error("No users found.")
+        }
         console.log(results);
     }
     catch (error) {
